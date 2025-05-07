@@ -1,0 +1,19 @@
+[project]
+name = "loop-modeller"
+version = "0.1.0"
+description = "A small script showcasing how missing loops can be modeled into a protein structure"
+readme = "README.md"
+authors = [
+    { name = "daniel", email = "github@dbauer.me" }
+]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+loop-modeller = "loop_modeller:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
