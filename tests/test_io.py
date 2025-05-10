@@ -7,11 +7,12 @@ import numpy as np
     [
         ("3IDP", 1, 2),
         ("8RX0", 1, 9),
-        ("6X18", 2, 6),
+        ("6X18", 1, 6),
     ],
 )
 def test_load_structure(pdb_id: str, num_structures: int, num_chains: int):
     structure = load_structure(pdb_id)
 
     assert structure is not None
+    assert structure.shape[0] == num_structures
     assert np.unique(structure.chain_id).size == num_chains
