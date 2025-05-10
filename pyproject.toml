@@ -9,7 +9,9 @@ authors = [
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "biotite>=1.3.0",
+]
 
 [project.scripts]
 loop-modeller = "loop_modeller:main"
