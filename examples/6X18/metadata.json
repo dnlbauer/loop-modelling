@@ -1,0 +1,89 @@
+{
+    "input": "6X18",
+    "output": [
+        {
+            "model_number": 1,
+            "file_name": "model_1.mmcif",
+            "score": 0.0026631716906946267
+        },
+        {
+            "model_number": 2,
+            "file_name": "model_2.mmcif",
+            "score": 0.002653622917056731
+        }
+    ],
+    "gaps": {
+        "A": [
+            {
+                "chain_id": "A",
+                "gap_start_res_id": 65,
+                "gap_end_res_id": 86,
+                "gap_res_names": [
+                    "VAL",
+                    "ASN",
+                    "GLY",
+                    "PHE",
+                    "ASN",
+                    "GLY",
+                    "GLU",
+                    "GLY",
+                    "GLY",
+                    "GLU",
+                    "GLU",
+                    "ASP",
+                    "PRO",
+                    "GLN",
+                    "ALA",
+                    "ALA",
+                    "ARG",
+                    "SER",
+                    "ASN",
+                    "SER",
+                    "ASP",
+                    "GLY"
+                ]
+            },
+            {
+                "chain_id": "A",
+                "gap_start_res_id": 233,
+                "gap_end_res_id": 239,
+                "gap_res_names": [
+                    "MET",
+                    "VAL",
+                    "ILE",
+                    "ARG",
+                    "GLU",
+                    "ASP",
+                    "ASN"
+                ]
+            }
+        ],
+        "R": [
+            {
+                "chain_id": "R",
+                "gap_start_res_id": 130,
+                "gap_end_res_id": 135,
+                "gap_res_names": [
+                    "LYS",
+                    "ARG",
+                    "GLY",
+                    "GLU",
+                    "ARG",
+                    "SER"
+                ]
+            },
+            {
+                "chain_id": "R",
+                "gap_start_res_id": 333,
+                "gap_end_res_id": 337,
+                "gap_res_names": [
+                    "LEU",
+                    "MET",
+                    "CYS",
+                    "LYS",
+                    "THR"
+                ]
+            }
+        ]
+    }
+}

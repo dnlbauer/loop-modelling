@@ -1,0 +1,155 @@
+{
+    "input": "8RX0",
+    "output": [
+        {
+            "model_number": 1,
+            "file_name": "model_1.mmcif",
+            "score": 0.0030081451060917177
+        },
+        {
+            "model_number": 2,
+            "file_name": "model_2.mmcif",
+            "score": 0.003020533880903491
+        }
+    ],
+    "gaps": {
+        "A": [
+            {
+                "chain_id": "A",
+                "gap_start_res_id": 405,
+                "gap_end_res_id": 412,
+                "gap_res_names": [
+                    "SER",
+                    "LYS",
+                    "LEU",
+                    "GLU",
+                    "ALA",
+                    "ARG",
+                    "GLU",
+                    "TYR"
+                ]
+            }
+        ],
+        "B": [
+            {
+                "chain_id": "B",
+                "gap_start_res_id": 209,
+                "gap_end_res_id": 213,
+                "gap_res_names": [
+                    "GLN",
+                    "ARG",
+                    "MET",
+                    "GLY",
+                    "ASP"
+                ]
+            }
+        ],
+        "C": [
+            {
+                "chain_id": "C",
+                "gap_start_res_id": 81,
+                "gap_end_res_id": 84,
+                "gap_res_names": [
+                    "ALA",
+                    "ASP",
+                    "ASP",
+                    "THR"
+                ]
+            }
+        ],
+        "D": [
+            {
+                "chain_id": "D",
+                "gap_start_res_id": 52,
+                "gap_end_res_id": 52,
+                "gap_res_names": [
+                    "PHE"
+                ]
+            },
+            {
+                "chain_id": "D",
+                "gap_start_res_id": 53,
+                "gap_end_res_id": 56,
+                "gap_res_names": [
+                    "GLU",
+                    "ASN",
+                    "GLU",
+                    "THR"
+                ]
+            }
+        ],
+        "E": [
+            {
+                "chain_id": "E",
+                "gap_start_res_id": 119,
+                "gap_end_res_id": 127,
+                "gap_res_names": [
+                    "THR",
+                    "GLU",
+                    "ALA",
+                    "ASP",
+                    "LEU",
+                    "GLN",
+                    "TYR",
+                    "GLY",
+                    "TYR"
+                ]
+            },
+            {
+                "chain_id": "E",
+                "gap_start_res_id": 372,
+                "gap_end_res_id": 375,
+                "gap_res_names": [
+                    "PRO",
+                    "LYS",
+                    "SER",
+                    "VAL"
+                ]
+            },
+            {
+                "chain_id": "E",
+                "gap_start_res_id": 485,
+                "gap_end_res_id": 489,
+                "gap_res_names": [
+                    "ASP",
+                    "THR",
+                    "VAL",
+                    "ILE",
+                    "ASP"
+                ]
+            },
+            {
+                "chain_id": "E",
+                "gap_start_res_id": 608,
+                "gap_end_res_id": 616,
+                "gap_res_names": [
+                    "ASP",
+                    "SER",
+                    "GLU",
+                    "LYS",
+                    "GLU",
+                    "ASP",
+                    "ILE",
+                    "ASP",
+                    "ALA"
+                ]
+            }
+        ],
+        "R": [
+            {
+                "chain_id": "R",
+                "gap_start_res_id": 60,
+                "gap_end_res_id": 66,
+                "gap_res_names": [
+                    "GLN",
+                    "ALA",
+                    "SER",
+                    "ALA",
+                    "THR",
+                    "SER",
+                    "GLU"
+                ]
+            }
+        ]
+    }
+}

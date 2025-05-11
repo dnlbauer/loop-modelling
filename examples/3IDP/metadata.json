@@ -1,0 +1,75 @@
+{
+    "input": "3IDP",
+    "output": [
+        {
+            "model_number": 1,
+            "file_name": "model_1.mmcif",
+            "score": 0.0026311239193083573
+        },
+        {
+            "model_number": 2,
+            "file_name": "model_2.mmcif",
+            "score": 0.002625581910884504
+        }
+    ],
+    "gaps": {
+        "A": [
+            {
+                "chain_id": "A",
+                "gap_start_res_id": 600,
+                "gap_end_res_id": 614,
+                "gap_res_names": [
+                    "GLU",
+                    "LYS",
+                    "SER",
+                    "ARG",
+                    "TRP",
+                    "SER",
+                    "GLY",
+                    "SER",
+                    "HIS",
+                    "GLN",
+                    "PHE",
+                    "GLU",
+                    "GLN",
+                    "LEU",
+                    "SER"
+                ]
+            },
+            {
+                "chain_id": "A",
+                "gap_start_res_id": 614,
+                "gap_end_res_id": 615,
+                "gap_res_names": [
+                    "ASP",
+                    "LYS"
+                ]
+            }
+        ],
+        "B": [
+            {
+                "chain_id": "B",
+                "gap_start_res_id": 598,
+                "gap_end_res_id": 613,
+                "gap_res_names": [
+                    "ALA",
+                    "THR",
+                    "GLU",
+                    "LYS",
+                    "SER",
+                    "ARG",
+                    "TRP",
+                    "SER",
+                    "GLY",
+                    "SER",
+                    "HIS",
+                    "GLN",
+                    "PHE",
+                    "GLU",
+                    "GLN",
+                    "LEU"
+                ]
+            }
+        ]
+    }
+}
