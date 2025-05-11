@@ -1,4 +1,6 @@
 import numpy as np
+import biotite.interface.openmm as openmm_interface
+import openmm
 from openmm.app.pdbfile import PDBFile
 from biotite.structure import AtomArray
 import biotite.structure.io.pdb as pdb
@@ -57,10 +59,7 @@ def fill_gaps_in_structure(structure: AtomArray, gaps: dict[int, tuple[int, list
     # Run fixer to fill missing gaps
     fixer.addMissingAtoms(seed=random_seed)
 
-    # TODO: This can probably be done without writing to a temporary file
-    # by reading the structure directly from the topology and positions
-    with NamedTemporaryFile(delete=True, suffix=".pdb") as temp_file:
-        PDBFile.writeFile(fixer.topology, fixer.positions, open(temp_file.name, 'w'), keepIds=True)
-        temp_file.flush()
-        result = pdb.PDBFile.read(temp_file.name)
-        return result.get_structure()[0]
+    # Parse output back to AtomArray
+    structure = openmm_interface.from_topology(fixer.topology)
+    structure.coord = np.array(fixer.positions.value_in_unit(openmm.unit.angstrom))
+    return structure
