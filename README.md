@@ -76,3 +76,34 @@ easy to implement.
 However, this scoring function is not sensitive to issues with the backbone (i.e. bad dihedrals).
 Ideally, this should be combined with an analysis of the backbone dihedrals
 or be replaced with a scoring function based on force field energy.
+
+## Installation and usage
+
+```bash
+git clone git@github.com:dnlbauer/loop-modelling.git
+cd loop-modelling
+uv venv
+source .venv/bin/activate
+uv sync
+```
+
+### CLI Interface
+
+Install the package with uv (or a package manager of your choice).
+
+```bash
+uv run lm <pdb id or mmcif file> <num models to produce>
+```
+
+- `<pdb id or mmcif file>`: The PDB ID or the path to an mmCIF file.
+- `<num models to produce>`: The number of models to produce. Default is 1.
+
+The tool creates a `metadata.json` file and the number of requested models
+saved as `model_i.mmcif` where `i` is the model number.
+
+The metadata file contains the scoring information for each model
+and an overview over residues that were modelled.
+
+### Examples
+
+The examples folder shows the results of the modelling process for three proteins.
