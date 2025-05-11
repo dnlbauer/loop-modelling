@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.scripts]
-loop-modeller = "loop_modeller:main"
+lm = "loop_modeller.main:main"
 
 [build-system]
 requires = ["hatchling"]
