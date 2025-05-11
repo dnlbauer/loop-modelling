@@ -11,6 +11,9 @@ license-files = ["LICENSE"]
 requires-python = ">=3.13"
 dependencies = [
     "biotite>=1.3.0",
+    "numpy>=2.2.5",
+    "openmm>=8.2.0",
+    "pdbfixer",
 ]
 
 [project.scripts]
@@ -25,4 +28,12 @@ dev = [
     "mypy>=1.15.0",
     "pytest>=8.3.5",
     "ruff>=0.11.9",
+]
+
+[tool.uv.sources]
+pdbfixer = { git = "https://github.com/openmm/pdbfixer" }
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: long running tests"
 ]
