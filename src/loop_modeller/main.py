@@ -1,6 +1,8 @@
 from importlib import metadata
+from itertools import chain
 import json
 import sys
+from tracemalloc import start
 
 from biotite.setup_ccd import CIFFile
 from biotite.structure import AtomArrayStack
@@ -63,9 +65,25 @@ def main() -> None:
             "file_name": f"model_{i+1}.mmcif",
             "score": score,
         })
+    gap_metaddata = {}
+    for chain_id in gaps:
+        chain_structure = structure[structure.chain_id == chain_id]
+        chain_gaps = []
+        for gap in gaps[chain_id]:
+            gap_start = gap[0] - 1
+            start_res = chain_structure[chain_structure.atom_name == "CA"][gap_start]
+            chain_gaps.append({
+                "chain_id": str(chain_id),
+                "gap_start_res_id": int(start_res.res_id + 1),
+                "gap_end_res_id": int(start_res.res_id) + len(gap[1]),
+                "gap_res_names": gap[1]
+            })
+        gap_metaddata[str(chain_id)] = chain_gaps
+
+
     metadata = {
         "input": file_or_pdb_id,
         "output": model_metadata,
-        "residues": gaps
+        "gaps": gap_metaddata
     }
     json.dump(metadata, open("metadata.json", "w"), indent=4)
