@@ -60,7 +60,6 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
         # for each gap in the structure,
         # find the corresponding residues in the reference sequence
         gapped_sequence = gapped_sequences[chain]
-        missing_residues[str(chain)] = []
 
         # iterate over the gapped sequence and find the position and length of the gaps
         # for each found gap, add the corresponding residues from the reference sequence
@@ -80,6 +79,8 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
                 if gap_start != None:
                     # gap ended, add the missing residues
                     residues = ungapped_sequence[gap_start:gap_start + gap_size]
+                    if not str(chain) in missing_residues:
+                        missing_residues[str(chain)] = []
                     missing_residues[str(chain)].append((gap_start-offset, residues))
                     offset += gap_size
                     gap_start = None
