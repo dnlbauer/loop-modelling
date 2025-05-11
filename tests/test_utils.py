@@ -1,24 +1,20 @@
-from biotite.structure import array, Atom
+from loop_modeller.io import load_sequence, load_structure
+from loop_modeller.utils import find_missing_residues
 
-from loop_modeller.utils import find_gaps_in_structure
+def test_find_missing_residues():
+    structure = load_structure("3IDP")[0]
+    sequences = load_sequence("3IDP")
 
-def test_find_gaps():
-    test_structure = array([
-        Atom([0,0,0], res_id=3, chain_id="A", atom_name="CA"),
-        Atom([0,0,0], res_id=4, chain_id="A", atom_name="CA"),
-        Atom([0,0,0], res_id=5, chain_id="A", atom_name="CA"),
-        # gap
-        Atom([0,0,0], res_id=7, chain_id="A", atom_name="CA"),
-        # gap
-        Atom([0,0,0], res_id=12, chain_id="A", atom_name="CA"),
-        Atom([0,0,0], res_id=13, chain_id="A", atom_name="CA"),
-        # no an actual gap because of chain change
-        Atom([0,0,0], res_id=15, chain_id="B", atom_name="CA"),
-        # gap
-        Atom([0,0,0], res_id=23, chain_id="B", atom_name="CA"),
-        Atom([0,0,0], res_id=24, chain_id="B", atom_name="CA"),
-    ])
-    print(test_structure)
-    gaps = find_gaps_in_structure(test_structure)
-    assert gaps.shape == (3,)
-    assert list(gaps) == [2, 3, 6]
+    gaps = find_missing_residues(structure, sequences)
+    assert len(gaps["A"]) == 2
+    assert gaps["A"][0][0] == 151
+    assert gaps["A"][0][1][0] == "GLU"
+    assert gaps["A"][0][1][-1] == "SER"
+
+    assert gaps["A"][1][0] == 165
+    assert gaps["A"][1][1] == ["ASP", "LYS"]
+
+    assert len(gaps["B"]) == 1
+    assert gaps["B"][0][0] == 149
+    assert gaps["B"][0][1][0] == "ALA"
+    assert gaps["B"][0][1][-1] == "LEU"
