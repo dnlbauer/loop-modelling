@@ -1,4 +1,4 @@
-import warnings
+from biotite.sequence import ProteinSequence
 from biotite.structure import AtomArray, AtomArrayStack
 from biotite.structure.io import pdbx
 from biotite.database import rcsb
@@ -27,3 +27,22 @@ def load_structure(pdb_id: str) -> AtomArrayStack:
         structure = AtomArrayStack(structure)
 
     return structure
+
+def load_sequence(pdb_id: str) -> dict[str, ProteinSequence]:
+    """
+    Load the sequence of a protein from the RCSB PDB database.
+
+    Parameters
+    ----------
+    pdb_id : str
+        The PDB ID of the structure to load.
+
+    Returns
+    -------
+    str
+        The sequence of the protein structure.
+    """
+    # Fetch the PDB file from the RCSB PDB database and load it
+    pdb_file = rcsb.fetch(pdb_id, format="mmcif", target_path="structures")
+    file = pdbx.CIFFile.read(pdb_file)
+    return pdbx.get_sequence(file)
