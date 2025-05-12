@@ -1,9 +1,5 @@
-from turtle import mode
-import biotite.interface.openmm as openmm_interface
 from biotite.structure import AtomArray
-import biotite.structure as struct
 import numpy as np
-from openmm.app import ForceField, Modeller, NoCutoff
 from scipy.spatial import cKDTree
 
 

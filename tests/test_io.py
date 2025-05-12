@@ -1,4 +1,3 @@
-from typing import Sequence
 import pytest
 from loop_modeller.io import load_sequence, load_structure
 import numpy as np

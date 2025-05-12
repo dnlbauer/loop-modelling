@@ -38,3 +38,6 @@ pdbfixer = { git = "https://github.com/openmm/pdbfixer" }
 markers = [
     "slow: long running tests"
 ]
+
+[tool.mypy]
+ignore_missing_imports = true

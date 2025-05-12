@@ -49,13 +49,13 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
         for offset in range(len(chain_sequence)):
             found = True
             for seq_res, struct_res in zip(chain_sequence[offset:], chain_structure):
-                if struct_res != None and struct_res != seq_res:
+                if struct_res and struct_res != seq_res:
                     found = False
                     break
             if found:
                 ungapped_sequence = chain_sequence[offset:]
                 break
-        if ungapped_sequence == None:
+        if ungapped_sequence is None:
             raise ValueError(f"Failed to align reference sequence with structure for chain {chain}.")
             
         # for each gap in the structure,
@@ -68,8 +68,8 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
         gap_start = None # start of the gap in the sequence
         gap_size = 0
         for idx, residue in enumerate(gapped_sequence):
-            if residue == None:
-                if gap_start == None:
+            if residue is None:
+                if gap_start is None:
                     # new gap
                     gap_start = idx
                     gap_size = 1
@@ -77,10 +77,10 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
                     # continue gap
                     gap_size += 1
             else:
-                if gap_start != None:
+                if gap_start:
                     # gap ended, add the missing residues
                     residues = ungapped_sequence[gap_start:gap_start + gap_size]
-                    if not str(chain) in missing_residues:
+                    if str(chain) not in missing_residues:
                         missing_residues[str(chain)] = []
                     missing_residues[str(chain)].append((gap_start-offset, residues))
                     offset += gap_size

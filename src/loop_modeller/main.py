@@ -1,8 +1,5 @@
-from importlib import metadata
-from itertools import chain
 import json
 import sys
-from tracemalloc import start
 
 from biotite.setup_ccd import CIFFile
 from biotite.structure import AtomArrayStack

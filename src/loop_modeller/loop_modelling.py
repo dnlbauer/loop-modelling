@@ -1,7 +1,6 @@
 import numpy as np
 import biotite.interface.openmm as openmm_interface
 import openmm
-from openmm.app.pdbfile import PDBFile
 from biotite.structure import AtomArray
 import biotite.structure.io.pdb as pdb
 from pdbfixer import PDBFixer
