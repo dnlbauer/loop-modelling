@@ -25,31 +25,36 @@ def main() -> None:
     # Load the structure and sequence
     structure = load_structure(file_or_pdb_id)
     sequences = load_sequence(file_or_pdb_id)
+
     if isinstance(structure, AtomArrayStack):
-        structure = structure[0]
+        if len(structure) > 1:
+            print("Multiple structures found in input. Using round robin to select structures for modelling.")
+        selected_structures = [structure[i % len(structure)] for i in range(number_of_models)]
+    else:
+        selected_structures = [structure] * number_of_models
 
-    # Find gaps in the structure
-    gaps = find_missing_residues(structure, sequences)
-    if len(gaps) == 0:
-        print("No gaps found in the structure.")
-        sys.exit(0)
-
-    # Model missing residues to structures and scrore them 
+    # Model loops and score each structure
     fixed_structures = []
     scores = []
-    for i in range(number_of_models):
+    for i, structure in enumerate(selected_structures):
+        # Find gaps in the structure
+        gaps = find_missing_residues(structure, sequences)
+        if len(gaps) == 0:
+            print("No gaps found in the structure.")
+            sys.exit(0)
+
+        # Model missing residues to structures and score them 
         # Fill gaps in the structure
-        fixed_structure = fill_gaps_in_structure(structure, gaps, random_seed=i)
+        fixed_structure = fill_gaps_in_structure(structure, gaps)
         fixed_structures.append(fixed_structure)
         score = clash_score(fixed_structure)
         scores.append(score)
         print(f"Model {i+1} score: ", score)
 
-    # Write structures to disk
-    for i, structure in enumerate(fixed_structures):
+        # Write structures to disk
         output_path = f"model_{i+1}.mmcif"
         file = CIFFile()
-        pdbx.set_structure(file, structure)
+        pdbx.set_structure(file, fixed_structure)
         with open(output_path, "w") as out:
             file.write(out)
         print(f"Model {i+1} written to {output_path}")
