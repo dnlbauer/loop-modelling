@@ -4,12 +4,27 @@
         {
             "model_number": 1,
             "file_name": "model_1.mmcif",
-            "score": 0.0030081451060917177
+            "score": 0.003002053388090349
         },
         {
             "model_number": 2,
             "file_name": "model_2.mmcif",
-            "score": 0.003020533880903491
+            "score": 0.003017180013689254
+        },
+        {
+            "model_number": 3,
+            "file_name": "model_3.mmcif",
+            "score": 0.0029986995208761123
+        },
+        {
+            "model_number": 4,
+            "file_name": "model_4.mmcif",
+            "score": 0.0030082819986310748
+        },
+        {
+            "model_number": 5,
+            "file_name": "model_5.mmcif",
+            "score": 0.0030042436687200548
         }
     ],
     "gaps": {
@@ -68,8 +83,8 @@
             },
             {
                 "chain_id": "D",
-                "gap_start_res_id": 53,
-                "gap_end_res_id": 56,
+                "gap_start_res_id": 54,
+                "gap_end_res_id": 57,
                 "gap_res_names": [
                     "GLU",
                     "ASN",
@@ -97,8 +112,8 @@
             },
             {
                 "chain_id": "E",
-                "gap_start_res_id": 372,
-                "gap_end_res_id": 375,
+                "gap_start_res_id": 381,
+                "gap_end_res_id": 384,
                 "gap_res_names": [
                     "PRO",
                     "LYS",
@@ -108,8 +123,8 @@
             },
             {
                 "chain_id": "E",
-                "gap_start_res_id": 485,
-                "gap_end_res_id": 489,
+                "gap_start_res_id": 498,
+                "gap_end_res_id": 502,
                 "gap_res_names": [
                     "ASP",
                     "THR",
@@ -120,8 +135,8 @@
             },
             {
                 "chain_id": "E",
-                "gap_start_res_id": 608,
-                "gap_end_res_id": 616,
+                "gap_start_res_id": 626,
+                "gap_end_res_id": 634,
                 "gap_res_names": [
                     "ASP",
                     "SER",

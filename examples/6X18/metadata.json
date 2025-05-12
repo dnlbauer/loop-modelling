@@ -4,12 +4,27 @@
         {
             "model_number": 1,
             "file_name": "model_1.mmcif",
-            "score": 0.0026631716906946267
+            "score": 0.0026587717655869687
         },
         {
             "model_number": 2,
             "file_name": "model_2.mmcif",
-            "score": 0.002653622917056731
+            "score": 0.002664950383823254
+        },
+        {
+            "model_number": 3,
+            "file_name": "model_3.mmcif",
+            "score": 0.0026589589964426136
+        },
+        {
+            "model_number": 4,
+            "file_name": "model_4.mmcif",
+            "score": 0.0026501591462272985
+        },
+        {
+            "model_number": 5,
+            "file_name": "model_5.mmcif",
+            "score": 0.002658022842164389
         }
     ],
     "gaps": {
@@ -45,8 +60,8 @@
             },
             {
                 "chain_id": "A",
-                "gap_start_res_id": 233,
-                "gap_end_res_id": 239,
+                "gap_start_res_id": 255,
+                "gap_end_res_id": 261,
                 "gap_res_names": [
                     "MET",
                     "VAL",
@@ -74,8 +89,8 @@
             },
             {
                 "chain_id": "R",
-                "gap_start_res_id": 333,
-                "gap_end_res_id": 337,
+                "gap_start_res_id": 339,
+                "gap_end_res_id": 343,
                 "gap_res_names": [
                     "LEU",
                     "MET",
