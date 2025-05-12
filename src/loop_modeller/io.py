@@ -8,15 +8,12 @@ def load_structure(pdb_id_or_path: str|Path) -> AtomArrayStack:
     """
     Load a protein structure from the RCSB PDB database.
 
-    Parameters
-    ----------
-    pdb_id : str
-        The PDB ID of the structure to load.
+    Args:
+        pdb_id_or_path (str): The PDB ID or path of the structure
+            to load.
 
-    Returns
-    -------
-    AtomArrayStack
-        The loaded structure as an AtomArrayStack object.
+    Returns:
+        AtomArrayStack: The loaded structure.
     """
     if Path(pdb_id_or_path).is_file():
         # If a file path is provided, load the structure from the file
@@ -38,10 +35,8 @@ def load_sequence(pdb_id_or_path: str|Path) -> dict[str, ProteinSequence]:
     """
     Load the sequence of a protein from the RCSB PDB database.
 
-    Parameters
-    ----------
-    pdb_id : str
-        The PDB ID of the structure to load.
+    Args:
+    pdb_id_or_path (str): The PDB ID or path of the sequence to load.
 
     Returns
     -------

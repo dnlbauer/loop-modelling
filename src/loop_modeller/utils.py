@@ -11,6 +11,7 @@ def find_missing_residues(structure: AtomArray, chain_sequences: dict[str, list[
         structure (AtomArray): The atomic structure of the protein
         chain_sequences (dict[str, ProteinSequence]): A dictionary mapping chain 
             IDs to their corresponding full amino acid sequences.
+
     Returns:
         dict[str, list[tuple[int, ProteinSequence]]]: A dictionary where each key 
         is a chain ID mappint to a list of tuples.
